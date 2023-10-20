@@ -20,6 +20,7 @@ const Header = () => {
     const navLinks = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
         <li><NavLink to={'/addproduct'}>Add Product</NavLink></li>
+        <li><NavLink to={'/cart'}>My Curt</NavLink></li>
 
     </>
     return (

@@ -5,6 +5,7 @@ import AddProduct from "../Pages/AddProduct/AddProduct";
 import Error from "../Pages/Error/Error";
 import Login from "../Pages/Login/Login";
 import PrivateRouter from "./PrivateRouter";
+import Cart from "../Pages/Cart/cart";
 
 const MainRouter = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const MainRouter = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/cart',
+                element: <Cart></Cart>
             }
         ]
     }
