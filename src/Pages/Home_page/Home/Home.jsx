@@ -1,6 +1,7 @@
 
 import Choose from "../Choose/Choose";
 import Banner from "../Banner/Banner";
+import Brand from "../Brand/Brand";
 
 const Home = () => {
     
@@ -10,10 +11,10 @@ const Home = () => {
             <Banner></Banner>
 
             {/* whoy choose us section */}
-            <div id="choose">
-
             <Choose></Choose>
-            </div>
+            
+            {/* brand section here */}
+            <Brand></Brand>
         </div>
     );
 };

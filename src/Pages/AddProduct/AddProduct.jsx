@@ -10,7 +10,8 @@ const AddProduct = () => {
         const image = form.image.value;
         const type = form.type.value
         const description = form.description.value
-        console.log(name, brand, price, rating, image, description, type);
+        const product = {name, brand, price, rating, image, type, description}
+        console.log(product);
         form.reset()
     }
     return (
