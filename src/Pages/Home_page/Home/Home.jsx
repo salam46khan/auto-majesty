@@ -1,18 +1,19 @@
-import { useContext } from "react";
-import { AuthContext } from "../../../Provider/AuthProvider";
+
 import Choose from "../Choose/Choose";
+import Banner from "../Banner/Banner";
 
 const Home = () => {
-    const {user} = useContext(AuthContext)
+    
     return (
         <div>
-            <h2>this is home page :</h2>
-            {
-                user ? <p>{user.email}</p> : <></>
-            }
+            {/* banner section here  */}
+            <Banner></Banner>
 
             {/* whoy choose us section */}
+            <div id="choose">
+
             <Choose></Choose>
+            </div>
         </div>
     );
 };
