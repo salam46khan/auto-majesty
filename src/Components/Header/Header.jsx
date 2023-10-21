@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import './Header.css'
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Header = () => {

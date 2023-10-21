@@ -1,14 +1,10 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useContext} from "react";
 import BrandItem from "../../../Components/BrandItem/BrandItem";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Brand = () => {
-    const [brands, setBrand] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:5000/brand')
-            .then(res => res.json())
-            .then(data => setBrand(data))
-    }, [])
+
+    const {brands} = useContext(AuthContext)
     
     return (
         <div className="bg-orange-200">

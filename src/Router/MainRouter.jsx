@@ -8,6 +8,7 @@ import PrivateRouter from "./PrivateRouter";
 import Cart from "../Pages/Cart/cart";
 import Products from "../Components/Products/Products";
 import ProductDetails from "../Components/ProductDetails/ProductDetails";
+import Update from "../Components/Update/Update";
 
 const MainRouter = createBrowserRouter([
     {
@@ -39,7 +40,12 @@ const MainRouter = createBrowserRouter([
             },
             {
                 path: `/details/:id`,
-                element: <ProductDetails></ProductDetails>,
+                element: <PrivateRouter><ProductDetails></ProductDetails></PrivateRouter>,
+                loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`)
+            },
+            {
+                path: `/update/:id`,
+                element: <PrivateRouter><Update></Update></PrivateRouter>,
                 loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`)
             }
         ]

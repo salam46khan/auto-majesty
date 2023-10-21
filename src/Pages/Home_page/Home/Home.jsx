@@ -2,6 +2,7 @@
 import Choose from "../Choose/Choose";
 import Banner from "../Banner/Banner";
 import Brand from "../Brand/Brand";
+import Testimonial from "../../../Components/Testimonial/Testimonial";
 
 const Home = () => {
     
@@ -15,6 +16,9 @@ const Home = () => {
             
             {/* brand section here */}
             <Brand></Brand>
+
+            {/* teastimonial section  */}
+            <Testimonial></Testimonial>
         </div>
     );
 };

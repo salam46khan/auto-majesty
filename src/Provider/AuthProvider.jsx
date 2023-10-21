@@ -10,6 +10,8 @@ const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null)
     const [loader, setLoader] = useState(true)
     const [logo, setLogo] =useState({})
+    const [brands, setBrand] = useState([])
+    const [testimonial, setTestimonial] = useState([])
 
     const createUser = (email, password) =>{
         setLoader(true)
@@ -47,6 +49,18 @@ const AuthProvider = ({children}) => {
             .then(res => res.json())
             .then(data => setLogo(data))
     },[])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/brand')
+            .then(res => res.json())
+            .then(data => setBrand(data))
+    }, [])
+
+    useEffect(()=>{
+        fetch('http://localhost:5000/testimonial')
+            .then(res => res.json())
+            .then(data => setTestimonial(data))
+    },[])
     
     const authinfo = {
         createUser,
@@ -55,7 +69,9 @@ const AuthProvider = ({children}) => {
         user,
         logOut,
         loader,
-        logo
+        logo,
+        brands,
+        testimonial
     }
     return (
         <AuthContext.Provider value={authinfo}>
