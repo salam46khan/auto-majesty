@@ -9,6 +9,7 @@ const gooleProvider = new GoogleAuthProvider()
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null)
     const [loader, setLoader] = useState(true)
+    const [logo, setLogo] =useState({})
 
     const createUser = (email, password) =>{
         setLoader(true)
@@ -40,13 +41,21 @@ const AuthProvider = ({children}) => {
             unsubscribe()
         }
     },[])
+
+    useEffect(()=>{
+        fetch('http://localhost:5000/logo')
+            .then(res => res.json())
+            .then(data => setLogo(data))
+    },[])
+    
     const authinfo = {
         createUser,
         logInUser,
         googleSignIn,
         user,
         logOut,
-        loader
+        loader,
+        logo
     }
     return (
         <AuthContext.Provider value={authinfo}>

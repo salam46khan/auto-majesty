@@ -12,7 +12,18 @@ const AddProduct = () => {
         const description = form.description.value
         const product = {name, brand, price, rating, image, type, description}
         console.log(product);
-        form.reset()
+        fetch('http://localhost:5000/products', {
+            method: "POST",
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(product)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                form.reset()
+            })
     }
     return (
         <div className="bg-orange-100">

@@ -1,11 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import './Header.css'
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Header = () => {
-    const { user, logOut } = useContext(AuthContext)
+    const { user, logOut, logo } = useContext(AuthContext)
+    
+
 
     const handleLogOut = () =>{
         logOut()
@@ -36,7 +38,11 @@ const Header = () => {
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <div className="flex items-center normal-case text-xl">
+                        <img className="w-20" src={logo.img} alt="" />
+                        <p className="font-extrabold hidden md:block">{logo.name}</p>
+                    </div>
+                    
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -51,10 +57,10 @@ const Header = () => {
 
                     {
                         user ? 
-                        <button onClick={handleLogOut}>Log Out</button> 
+                        <button className="btn bg-lime-400 hover:bg-lime-200 " onClick={handleLogOut}>Log Out</button> 
                         : 
                         <Link to={'/login'}>
-                            <button className="btn btn-sm ">Log In</button>
+                            <button className="btn bg-lime-400 hover:bg-lime-200 ">Log In</button>
                         </Link>
                     }
 

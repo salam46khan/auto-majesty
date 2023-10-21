@@ -1,12 +1,17 @@
+import { useContext } from 'react';
 import { FaFacebook } from 'react-icons/fa';
 import { TiSocialInstagram, TiSocialTwitter } from 'react-icons/ti'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 const Footer = () => {
+    const {logo} = useContext(AuthContext)
     return (
         <div className="bg-orange-400 text-gray-100 py-10 px-3">
             <div className="container mx-auto grid gap-3 grid-cols-1 md:grid-cols-3">
                 <div>
-                    <div className='mb-4'>logo</div>
+                    <div className='mb-4'>
+                        <img className='w-1/2' src={logo.img} alt="" />
+                    </div>
                     <p className="">
                     Welcome to Automajesty, where the world of cars meets luxury, quality, and unmatched customer satisfaction. We are not just another car selling company; <br /> We are your gateway to a world of automotive excellence and distinction. At Automajesty, we redefine the car-buying experience with a commitment to providing the finest vehicles and services to our valued customers.
                     </p>
