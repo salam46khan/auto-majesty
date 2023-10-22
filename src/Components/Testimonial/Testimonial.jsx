@@ -4,7 +4,6 @@ import TesCard from "../TesCard/TesCard";
 
 const Testimonial = () => {
     const {testimonial} = useContext(AuthContext)
-    console.log(testimonial);
     return (
         <div className="">
             <div className="container mx-auto px-3 py-10">

@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 const BrandItem = ({brand}) => {
-    console.log(brand.brand);
-
-    
     
     return (
         <Link to={`product/${brand.brand}`} className='hover:shadow-lg shadow-inner cursor-pointer rounded-lg text-center p-5'>   

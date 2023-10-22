@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaSignOutAlt } from "react-icons/fa";
 import './Header.css'
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -22,6 +22,7 @@ const Header = () => {
     const navLinks = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
         <li><NavLink to={'/addproduct'}>Add Product</NavLink></li>
+        <li><NavLink to={'/cart'}>My Cart</NavLink></li>
 
     </>
     return (
@@ -57,7 +58,10 @@ const Header = () => {
 
                     {
                         user ? 
-                        <button className="btn bg-lime-400 hover:bg-lime-200 " onClick={handleLogOut}>Log Out</button> 
+                        <button className="btn bg-lime-400 hover:bg-lime-200 " onClick={handleLogOut}>
+                            <span className="text-xl mr-1">{user.displayName}</span>
+                            <FaSignOutAlt></FaSignOutAlt>
+                        </button> 
                         : 
                         <Link to={'/login'}>
                             <button className="btn bg-lime-400 hover:bg-lime-200 ">Log In</button>

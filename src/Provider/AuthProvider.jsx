@@ -12,6 +12,7 @@ const AuthProvider = ({children}) => {
     const [logo, setLogo] =useState({})
     const [brands, setBrand] = useState([])
     const [testimonial, setTestimonial] = useState([])
+    const [cart, setCart] = useState([])
 
     const createUser = (email, password) =>{
         setLoader(true)
@@ -45,21 +46,27 @@ const AuthProvider = ({children}) => {
     },[])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/logo')
+        fetch('https://auto-majesty-server.vercel.app/logo')
             .then(res => res.json())
             .then(data => setLogo(data))
     },[])
 
     useEffect(() => {
-        fetch('http://localhost:5000/brand')
+        fetch('https://auto-majesty-server.vercel.app/brand')
             .then(res => res.json())
             .then(data => setBrand(data))
     }, [])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/testimonial')
+        fetch('https://auto-majesty-server.vercel.app/testimonial')
             .then(res => res.json())
             .then(data => setTestimonial(data))
+    },[])
+
+    useEffect(()=>{
+        fetch('https://auto-majesty-server.vercel.app/cart')
+        .then(res => res.json())
+        .then(data => setCart(data))
     },[])
     
     const authinfo = {
@@ -71,7 +78,8 @@ const AuthProvider = ({children}) => {
         loader,
         logo,
         brands,
-        testimonial
+        testimonial,
+        cart
     }
     return (
         <AuthContext.Provider value={authinfo}>

@@ -12,7 +12,7 @@ const AddProduct = () => {
         const description = form.description.value
         const product = {name, brand, price, rating, image, type, description}
         console.log(product);
-        fetch('http://localhost:5000/products', {
+        fetch('https://auto-majesty-server-7ok9zmhsg-salams-projects.vercel.app/products', {
             method: "POST",
             headers: {
                 'content-type' : 'application/json'

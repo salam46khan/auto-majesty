@@ -1,9 +1,33 @@
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
     const singleProduct = useLoaderData()
-    console.log(singleProduct);
-    const { name, brand, image, price, type, rating, description } = singleProduct
+    
+    const { name, brand, image, price, type, rating, description } = singleProduct;
+
+    const handleCart = () =>{
+        console.log(singleProduct);
+        fetch('https://auto-majesty-server.vercel.app/cart', {
+            method: "POST",
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(singleProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.insertedId){
+                    Swal.fire({
+                        title: 'Successful!',
+                        text: 'You are added this product successfuly',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+                }
+            })
+    }
     return (
         <div className="bg-orange-200">
             <div className="container mx-auto px-3 py-10 flex justify-center items-center">
@@ -23,7 +47,7 @@ const ProductDetails = () => {
                             <hr />
                         </div>
                         <div className="pt-4"> 
-                            <button className="btn bg-lime-400 hover:bg-lime-200">Add to cart</button>
+                            <button onClick={handleCart} className="btn bg-lime-400 hover:bg-lime-200">Add to cart</button>
                         </div>
 
                     </div>

@@ -1,9 +1,9 @@
 import { useLoaderData } from "react-router-dom";
-import Swal from "sweetalert2";
+
 
 const Update = () => {
     const product = useLoaderData()
-    const {name, price, rating, image, type, description, _id} = product
+    const {name, price, rating, brand, image, type, description, _id} = product
     console.log(product);
 
     const handleUpdate = event =>{
@@ -20,7 +20,7 @@ const Update = () => {
         const Updateproduct = {name, brand, price, rating, image, type, description}
         console.log(Updateproduct);
 
-        fetch(`http://localhost:5000/details/${_id}`, {
+        fetch(`https://auto-majesty-server.vercel.app/details/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type' : 'application/json'
@@ -57,7 +57,7 @@ const Update = () => {
                             <div className="w-full">
                                 
 
-                                <select className="w-full px-3 py-1 border rounded" name="brand" id="brand">
+                                <select className="w-full px-3 py-1 border rounded" defaultValue={brand} name="brand" id="brand">
                                     <option value="toyota">Toyota</option>
                                     <option value="ford">Ford</option>
                                     <option value="bmw">BMW</option>

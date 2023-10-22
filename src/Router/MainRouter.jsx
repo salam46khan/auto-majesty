@@ -30,23 +30,25 @@ const MainRouter = createBrowserRouter([
             },
             {
                 path: '/cart',
-                element: <Cart></Cart>
+                element: <PrivateRouter><Cart></Cart></PrivateRouter>,
+                loader: () => fetch('https://auto-majesty-server.vercel.app/cart')
+                
             },
             {
                 path: `/product/:brand`,
                 element: <Products></Products>,
-                loader: ({params})=> fetch(`http://localhost:5000/products/${params.brand}`)
+                loader: ({params})=> fetch(`https://auto-majesty-server.vercel.app/products/${params.brand}`)
                 
             },
             {
                 path: `/details/:id`,
                 element: <PrivateRouter><ProductDetails></ProductDetails></PrivateRouter>,
-                loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`)
+                loader: ({params}) => fetch(`https://auto-majesty-server.vercel.app/details/${params.id}`)
             },
             {
                 path: `/update/:id`,
                 element: <PrivateRouter><Update></Update></PrivateRouter>,
-                loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`)
+                loader: ({params}) => fetch(`https://auto-majesty-server.vercel.app/details/${params.id}`)
             }
         ]
     }

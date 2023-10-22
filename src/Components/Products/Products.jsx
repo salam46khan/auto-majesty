@@ -3,6 +3,7 @@ import ProductItem from "../ProductItem/ProductItem";
 
 const Products = () => {
     const products = useLoaderData();
+    console.log(products);
     return (
         <div className="bg-orange-200">
             <div className="container mx-auto px-3 py-10">
