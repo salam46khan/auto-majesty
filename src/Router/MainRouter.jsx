@@ -9,6 +9,7 @@ import Cart from "../Pages/Cart/cart";
 import Products from "../Components/Products/Products";
 import ProductDetails from "../Components/ProductDetails/ProductDetails";
 import Update from "../Components/Update/Update";
+import About from "../Pages/About/About";
 
 const MainRouter = createBrowserRouter([
     {
@@ -49,6 +50,10 @@ const MainRouter = createBrowserRouter([
                 path: `/update/:id`,
                 element: <PrivateRouter><Update></Update></PrivateRouter>,
                 loader: ({params}) => fetch(`https://auto-majesty-server.vercel.app/details/${params.id}`)
+            },
+            {
+                path: '/about',
+                element: <About></About>
             }
         ]
     }
