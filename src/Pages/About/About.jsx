@@ -7,7 +7,7 @@ const About = () => {
                     <h2 className="text-4xl text-lime-400 font-bold">About Us</h2>
                     <hr className="w-1/2 my-2 border-lime-400" />
                     <p className="text-gray-400 py-3">
-                        At Automajesty, we believe that a car is more than just a mode of transportation; it's an expression of your individuality, a symbol of your aspirations, and a source of sheer driving pleasure. We are more than a car selling company; we are the gateway to a world where luxury, quality, and personalized service converge to elevate your automotive experience.
+                        At Automajesty, we believe that a car is more than just a mode of transportation; it is an expression of your individuality, a symbol of your aspirations, and a source of sheer driving pleasure. We are more than a car selling company; we are the gateway to a world where luxury, quality, and personalized service converge to elevate your automotive experience.
                     </p>
                 </div>
                 <div className="w-full md:w-2/5">
