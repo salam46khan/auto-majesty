@@ -7,7 +7,7 @@ const Brand = () => {
     const {brands} = useContext(AuthContext)
     
     return (
-        <div className="bg-orange-200">
+        <div className="bg-orange-100">
             <div className="container mx-auto px-3 py-10">
                 <div className="pb-4 text-center">
                     <h2 className="text-4xl text-lime-400 font-bold">Brand Collection</h2>

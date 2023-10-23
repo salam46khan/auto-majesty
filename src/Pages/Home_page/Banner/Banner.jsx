@@ -1,4 +1,4 @@
-import {} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import 'react-slideshow-image/dist/styles.css'
 import './Banner.css'
 import { Fade} from 'react-slideshow-image';
@@ -12,7 +12,7 @@ const Banner = () => {
                     <p className='text-xl text-gray-400'>
                         where the world of cars meets luxury, quality, and unmatched customer satisfaction.
                     </p>
-                    <button className='btn bg-lime-400 hover:bg-lime-200' >About Us</button>
+                    <Link to={'/about'}><button className='btn bg-lime-400 hover:bg-lime-200' >About Us</button></Link>
                     
                 </div>
                 <div className='w-full md:w-1/2 flex items-center justify-center'>

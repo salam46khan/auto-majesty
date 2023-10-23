@@ -1,15 +1,12 @@
 
-import CartItem from "../../Components/CartItem/CartItem";
-import { useContext, useState } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
+
 import { FaTimes } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Cart = () => {
-    const [hide, setHide] = useState(false)
-
-    // const { cart } = useContext(AuthContext);
+    
+    
     const cart = useLoaderData()
 
    
@@ -38,16 +35,14 @@ const Cart = () => {
     }
 
     return (
-        <div className="bg-orange-200">
+        <div className="bg-orange-100">
             <div className="container mx-auto px-3 py-10">
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
 
-                    {/* {
-                        cart.map(cart => <CartItem key={cart._id} cart={cart}></CartItem>)
-                    } */}
+                    
 
                     {
-                        cart.map(loadCart => <div key={loadCart._id} className={hide ? 'hidden' : 'bg-base-100 p-3 relative'} >
+                        cart.map(loadCart => <div key={loadCart._id} className="bg-base-100 p-3 relative" >
 
                             <img className="w-full" src={loadCart.image ? loadCart.image : 'https://i.ibb.co/Dr8cBC7/not.png'} alt="" />
                             <div>
