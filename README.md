@@ -1,8 +1,15 @@
-# React + Vite
+# Auto Majesty
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### live link : [Auto Majesty](https://auto-majesty.web.app/)
+### Client side link : [Code](https://github.com/salam46khan/auto-majesty)
+### Server side link : [Code](https://github.com/salam46khan/auto-majesty-server)
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User Authentication.
+- Responsive design.
+- Easy to understand layout.
+- User can add product
+- User can update product
+- User can add to cart product
+- User can remove from his cart
